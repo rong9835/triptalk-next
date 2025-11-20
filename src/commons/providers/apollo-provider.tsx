@@ -80,7 +80,7 @@ export default function ApiHeaderProvider(props: ApiHeaderProviderProps) {
   });
 
   const uploadLink = createUploadLink({
-    uri: 'http://main-practice.codebootcamp.co.kr/graphql',
+    uri: 'https://main-practice.codebootcamp.co.kr/graphql',
   });
 
   // 매 요청마다 최신 토큰을 헤더에 추가
