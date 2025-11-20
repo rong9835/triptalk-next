@@ -1,0 +1,76 @@
+.h1 {
+  font-size: 28px;
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.hr {
+  margin: 16px 0px;
+}
+.작성자날짜 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.작성자 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  color: #5f5f5f;
+}
+.날짜 {
+  color: #818181;
+  font-size: 14px;
+}
+.링크위치 {
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
+.바다사진 {
+  padding: 24px 0px;
+  width: 400px;
+}
+.동영상배경 {
+  background-color: #f2f2f2;
+  width: 1280px;
+  height: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0px;
+}
+.싫어요좋아요 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.싫어요,
+.좋아요 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.목록수정 {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+.목록버튼,
+.수정버튼 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  background-color: white;
+}

@@ -1,0 +1,217 @@
+/* Container - 전체 레이아웃 */
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 왼쪽 로그인 영역 */
+.loginSection {
+  width: 400px;
+  min-width: 400px;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  flex-shrink: 0;
+}
+
+.loginContent {
+  width: 320px;
+  height: 396px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* 로고 및 환영 메시지 영역 - Frame 427323361 (320x128) */
+.welcomeSection {
+  width: 320px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.logoArea {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.welcomeTitle {
+  width: 320px;
+  height: 24px;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+
+/* 폼 영역 - Frame 427323362 (320x128) */
+.formSection {
+  width: 320px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.formDescription {
+  width: 320px;
+  height: 20px;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #333333;
+  margin: 0 0 16px 0;
+}
+
+.inputGroup {
+  width: 320px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 인풋 래퍼 */
+.inputWrapper {
+  width: 320px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* 인풋 스타일 */
+.input {
+  width: 320px;
+  height: 40px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #ababab;
+}
+
+.input:focus {
+  border-color: #2974e5;
+}
+
+/* 에러 상태 인풋 */
+.inputError {
+  border-color: #f66a6a !important;
+}
+
+.inputError:focus {
+  border-color: #f66a6a !important;
+}
+
+/* 에러 라벨 */
+.errorLabel {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #f66a6a;
+}
+
+/* 버튼 영역 - Frame 427323364 (320x92) */
+.buttonSection {
+  width: 320px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+
+/* 로그인 버튼 */
+.loginButton {
+  width: 320px;
+  height: 48px;
+  background-color: #2974e5;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.loginButton:hover {
+  background-color: #1e5cc4;
+}
+
+.loginButton:active {
+  background-color: #1a4ea3;
+}
+
+/* 회원가입 버튼 */
+.signupButton {
+  width: auto;
+  height: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #333333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.signupButton:hover {
+  color: #000000;
+}
+
+/* 오른쪽 이미지 영역 */
+.imageSection {
+  flex: 1;
+  position: relative;
+  width: calc(100vw - 400px);
+  height: 100vh;
+  overflow: hidden;
+}

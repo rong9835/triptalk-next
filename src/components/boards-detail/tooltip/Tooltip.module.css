@@ -1,0 +1,8 @@
+.customTooltip :global(.ant-tooltip-inner) {
+  background-color: white !important;
+  color: black !important;
+}
+
+.customTooltip :global(.ant-tooltip-arrow::before) {
+  background-color: white !important;
+}

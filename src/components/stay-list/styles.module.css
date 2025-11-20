@@ -1,0 +1,751 @@
+/* 컨테이너 */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Gap 영역 */
+.gap40 {
+  width: 1280px;
+  height: 40px;
+  background: transparent;
+}
+
+.gap64 {
+  width: 1280px;
+  height: 64px;
+  background: transparent;
+}
+
+.gap24 {
+  width: 1280px;
+  height: 24px;
+  background: transparent;
+}
+
+/* Header 영역 */
+.header {
+  width: 1280px;
+  height: 688px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  line-height: 36px;
+  color: var(--color-primary);
+  margin: 0 0 24px 0;
+}
+
+.accommodationContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.accommodationGrid {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.accommodationCard {
+  width: 628px;
+  height: 628px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imagePlaceholder,
+.cardImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f2f4f8 0%, #e1e4ea 100%);
+}
+
+.imagePlaceholderText,
+.cardImagePlaceholderText {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: #7a7f88;
+}
+
+.cardImagePlaceholderText {
+  font-size: var(--font-size-base);
+  line-height: 20px;
+}
+
+.accommodationImage {
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 29.14%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.bookmarkButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-base);
+}
+
+.bookmarkButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bookmarkCount {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-secondary);
+}
+
+.contentArea {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.accommodationTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-3xl);
+  line-height: 32px;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.accommodationDescription {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-2xl);
+  line-height: 24px;
+  color: var(--color-secondary);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.priceArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.price {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-3xl);
+  line-height: 32px;
+  color: var(--color-secondary);
+}
+
+.currency {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-3xl);
+  line-height: 32px;
+  color: var(--color-secondary);
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background: var(--color-bg-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Banner 영역 */
+.banner {
+  width: 1280px;
+  height: 240px;
+  display: flex;
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #cccbb4;
+}
+
+.bannerImageWrapper {
+  position: relative;
+  width: 584px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.bannerImage {
+  object-fit: cover;
+}
+
+.bannerGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(204, 203, 180, 0) 0%,
+    rgba(204, 203, 180, 1) 100%
+  );
+  pointer-events: none;
+}
+
+.bannerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 48px 90px 47px 0;
+  gap: var(--spacing-xl);
+}
+
+.badgeGroup {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: #abaa8c;
+  border-radius: var(--radius-md);
+}
+
+.badgeText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  line-height: 23px;
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.bannerTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: 34px;
+  line-height: 44px;
+  color: var(--color-primary);
+  text-align: right;
+  margin: 0;
+}
+
+/* Header2 영역 - 여기에서만 예약할 수 있는 숙소 */
+.header2 {
+  width: 1280px;
+  height: 36px;
+}
+
+.header2Title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  line-height: 36px;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Nav 영역 */
+.nav {
+  width: 262px;
+  height: 40px;
+  display: flex;
+  gap: 16px;
+  border-radius: var(--radius-md);
+}
+
+.tab {
+  width: 123px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.tabActive {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tabInactive {
+  background: var(--color-bg-primary);
+  color: #525252;
+  font-weight: var(--font-weight-medium);
+}
+
+.tabInactive:hover {
+  background: var(--color-bg-hover);
+}
+
+/* Search Bar 영역 */
+.searchBar {
+  width: 1280px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.searchBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+/* DatePicker */
+.datepicker {
+  width: 289px;
+  height: 48px;
+  background: #f2f2f2;
+  border-radius: var(--radius-md);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+  cursor: pointer;
+  transition: background var(--transition-base);
+}
+
+.datepicker:hover {
+  background: #e8e8e8;
+}
+
+.datepickerIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.datepickerText {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: #777777;
+}
+
+.dateGroup {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dateSeparator {
+  margin: 0 5px;
+}
+
+/* Search Input */
+.searchInput {
+  flex: 1;
+  max-width: 640px;
+  height: 48px;
+  background: #f2f2f2;
+  border-radius: var(--radius-md);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+  transition: background var(--transition-base);
+}
+
+.searchInput:hover {
+  background: #e8e8e8;
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.searchInputField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.searchInputField::placeholder {
+  color: #919191;
+}
+
+/* Search Button */
+.searchButton {
+  width: 64px;
+  height: 48px;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchButton:hover {
+  background: #333333;
+}
+
+.searchButtonText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  line-height: 24px;
+  color: var(--color-secondary);
+}
+
+/* Sell Button */
+.sellButton {
+  width: 178px;
+  height: 48px;
+  background: #2974e5;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sellButton:hover {
+  background: #1e5fc7;
+}
+
+.sellButtonText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  line-height: 24px;
+  color: var(--color-secondary);
+}
+
+/* Main 영역 */
+.main {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Category Filter Section */
+.categoryFilter {
+  width: 1280px;
+  height: 104px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  gap: 47.5px;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.categoryItem:hover {
+  opacity: 0.7;
+}
+
+.categoryText {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+}
+
+/* Card Grid Area */
+.cardArea {
+  width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4, 296px);
+  gap: 32px;
+}
+
+/* Accommodation Card */
+.accommodationCardMain {
+  display: flex;
+  flex-direction: column;
+  width: 296px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accommodationCardMain:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image Wrapper */
+.cardImageWrapper {
+  position: relative;
+  width: 296px;
+  height: 296px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+/* Card Bookmark */
+.cardBookmark {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.cardBookmarkCount {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-secondary);
+}
+
+/* Card Content */
+.cardContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.cardTitle {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: #333333;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardDescription {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #5f5f5f;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Card Footer */
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cardTags {
+  display: flex;
+  align-items: center;
+}
+
+.cardTag {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #2974e5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardBottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Card Profile */
+.cardProfile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardProfileImage {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profileImg {
+  object-fit: cover;
+}
+
+.cardProfileName {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+/* Card Price Area */
+.cardPriceArea {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cardPrice {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.cardCurrency {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.emptyMessage,
+.statusMessage {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #5f5f5f;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.statusMessage {
+  color: #2974e5;
+}

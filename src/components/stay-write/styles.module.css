@@ -1,0 +1,747 @@
+/* Container */
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* Title - 1280 x 28 */
+.title {
+  width: 100%;
+  height: 28px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 28px;
+  color: var(--color-primary);
+  margin: 0 0 40px 0;
+}
+
+/* Form Container */
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Input Section - 1280 x 80 */
+.inputSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelArea {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+}
+
+.label {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: 24px;
+  color: #333333;
+}
+
+.required {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: 24px;
+  color: #f66a6a;
+}
+
+.inputWrapper {
+  width: 100%;
+  height: 48px;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #ababab;
+}
+
+.input:focus {
+  border-color: var(--color-border-focus);
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: #e4e4e4;
+  margin: 0;
+}
+
+/* Editor Section - 1280 x 509 */
+.editorSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.editor {
+  width: 100%;
+  height: 477px;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.editorToolbar {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: var(--color-bg-primary);
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.toolbarGroupRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.toolbarButton {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.toolbarButton:hover {
+  opacity: 0.7;
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.editorDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+.editorContent {
+  width: 100%;
+  height: calc(477px - 56px - 1px);
+  padding: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.editorContent::placeholder {
+  color: #ababab;
+}
+
+/* React Quill 커스터마이징 - 기존 테두리 유지 */
+.editor .quillWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor .quillEditor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+/* Quill의 모든 테두리 제거 - 부모 .editor의 테두리만 사용 */
+.editor .quillEditor .ql-container,
+.editor .quillEditor .ql-container.ql-snow,
+.editor .quillEditor div.ql-container,
+.editor .quillEditor div.ql-container.ql-snow,
+.editor .quillWrapper .ql-container,
+.editor .quillWrapper .ql-container.ql-snow,
+.editor .quillWrapper div.ql-container,
+.editor .quillWrapper div.ql-container.ql-snow {
+  flex: 1;
+  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  overflow-y: auto;
+  background-color: var(--color-bg-primary);
+}
+
+.editor .quillEditor .ql-editor {
+  min-height: calc(477px - 56px - 1px);
+  padding: 16px;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* Quill 에디터 내 모든 텍스트 요소를 input과 동일한 스타일로 */
+.editor .quillEditor .ql-editor *,
+.editor .quillEditor .ql-editor p,
+.editor .quillEditor .ql-editor div,
+.editor .quillEditor .ql-editor span,
+.editor .quillEditor .ql-editor ol,
+.editor .quillEditor .ql-editor ul,
+.editor .quillEditor .ql-editor li,
+.editor .quillEditor .ql-editor pre,
+.editor .quillEditor .ql-editor code,
+.editor .quillEditor .ql-editor blockquote,
+.editor .quillEditor .ql-editor h1,
+.editor .quillEditor .ql-editor h2,
+.editor .quillEditor .ql-editor h3,
+.editor .quillEditor .ql-editor h4,
+.editor .quillEditor .ql-editor h5,
+.editor .quillEditor .ql-editor h6,
+.editor .quillEditor .ql-editor strong,
+.editor .quillEditor .ql-editor em,
+.editor .quillEditor .ql-editor u,
+.editor .quillEditor .ql-editor s {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Bold는 font-weight만 변경 */
+.editor .quillEditor .ql-editor strong,
+.editor .quillEditor .ql-editor b {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Italic은 font-style만 변경 */
+.editor .quillEditor .ql-editor em,
+.editor .quillEditor .ql-editor i {
+  font-style: italic;
+  font-size: var(--font-size-lg);
+}
+
+/* Underline은 text-decoration만 추가 */
+.editor .quillEditor .ql-editor u {
+  text-decoration: underline;
+  font-size: var(--font-size-lg);
+}
+
+/* Strikethrough는 text-decoration만 추가 */
+.editor .quillEditor .ql-editor s,
+.editor .quillEditor .ql-editor strike {
+  text-decoration: line-through;
+  font-size: var(--font-size-lg);
+}
+
+.editor .quillEditor .ql-editor.ql-blank::before {
+  color: #ababab;
+  font-style: normal;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  left: 16px;
+}
+
+.editor .quillEditor .ql-toolbar,
+.editor .quillEditor .ql-toolbar.ql-snow,
+.editor .quillEditor div.ql-toolbar,
+.editor .quillEditor div.ql-toolbar.ql-snow,
+.editor .quillWrapper .ql-toolbar,
+.editor .quillWrapper .ql-toolbar.ql-snow,
+.editor .quillWrapper div.ql-toolbar,
+.editor .quillWrapper div.ql-toolbar.ql-snow {
+  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 8px 8px 0 0;
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-primary);
+}
+
+/* Quill 버튼 및 아이콘 스타일 */
+.editor .quillEditor .ql-toolbar .ql-formats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 0;
+}
+
+.editor .quillEditor .ql-toolbar button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor .quillEditor .ql-toolbar button:hover {
+  opacity: 0.7;
+}
+
+.editor .quillEditor .ql-toolbar button.ql-active {
+  opacity: 0.7;
+}
+
+.editor .quillEditor .ql-toolbar .ql-stroke {
+  stroke: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-fill {
+  fill: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker {
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-label {
+  color: var(--color-text-primary);
+  padding: 0;
+  border: none;
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-options {
+  background-color: var(--color-bg-primary);
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: none;
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-item {
+  color: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-item:hover,
+.editor .quillEditor .ql-toolbar .ql-picker-item.ql-selected {
+  background-color: #f2f2f2;
+}
+
+/* Quill SVG 아이콘 스타일 */
+.editor .quillEditor .ql-toolbar .ql-stroke {
+  stroke: var(--color-text-primary);
+  stroke-width: 2;
+}
+
+.editor .quillEditor .ql-toolbar .ql-fill {
+  fill: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-label svg {
+  width: 18px;
+  height: 18px;
+}
+
+.editor .quillEditor .ql-toolbar button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.editor .quillEditor .ql-toolbar .ql-formats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 0;
+}
+
+.editor .quillEditor .ql-toolbar button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor .quillEditor .ql-toolbar button:hover {
+  opacity: 0.7;
+}
+
+.editor .quillEditor .ql-toolbar button.ql-active {
+  opacity: 0.7;
+}
+
+.editor .quillEditor .ql-toolbar .ql-stroke {
+  stroke: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-fill {
+  fill: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-label {
+  color: var(--color-text-primary);
+  padding: 0;
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-options {
+  background-color: var(--color-bg-primary);
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-item {
+  color: var(--color-text-primary);
+}
+
+.editor .quillEditor .ql-toolbar .ql-picker-item:hover,
+.editor .quillEditor .ql-toolbar .ql-picker-item.ql-selected {
+  background-color: #f2f2f2;
+}
+
+/* Address Section - 1280 x 408 */
+.addressSection {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+
+.addressLeft {
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Frame 427323310 - 주소 + 상세주소 영역 (396 x 192) */
+.addressTopFrame {
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 주소 입력 블록 (220 x 80) */
+.addressInputBlock {
+  width: 220px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zipcodeWrapper {
+  width: 220px;
+  height: 48px;
+  display: flex;
+  gap: 8px;
+}
+
+.zipcodeInput {
+  width: 82px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.zipcodeInput::placeholder {
+  color: #ababab;
+}
+
+/* 상세주소 입력 (396 x 48) - 레이블 없음 */
+.addressDetailInput {
+  width: 396px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.addressDetailInput::placeholder {
+  color: #ababab;
+}
+
+.addressDetailInput:focus {
+  border-color: var(--color-border-focus);
+}
+
+/* Frame 427323309 - 위도/경도 영역 (396 x 176) */
+.latLngFrame {
+  width: 396px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 위도/경도 입력 (396 x 48) */
+.latLngInput {
+  width: 396px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.latLngInput::placeholder {
+  color: #ababab;
+}
+
+.latLngInput:disabled {
+  background-color: #e4e4e4;
+  color: #919191;
+  border-color: #d4d3d3;
+}
+
+/* Map Section */
+.mapSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mapContainer {
+  width: 844px;
+  height: 312px;
+  border: 1px solid #e4e4e4;
+  border-radius: 16px;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.mapContainer > div {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 16px;
+}
+
+.mapPlaceholder {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: 20px;
+  color: #777777;
+  position: absolute;
+  z-index: 1;
+}
+
+.mapContainer.loaded .mapPlaceholder {
+  display: none;
+}
+
+/* Error Message */
+.errorMessage {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+  line-height: 20px;
+  color: #f66a6a;
+  margin-top: 4px;
+}
+
+/* Image Section - 1280 x 192 */
+.imageSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.imageUploadContainer {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.imageUpload {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageUpload:hover {
+  background-color: #e8e8e8;
+}
+
+.uploadText {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: #777777;
+}
+
+.uploadedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Button Section - 1280 x 48 */
+.buttonSection {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.cancelButton {
+  width: 64px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 24px;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.submitButton {
+  width: 95px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 24px;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+}
+
+.submitButton:not(:disabled):hover {
+  opacity: 0.9;
+}

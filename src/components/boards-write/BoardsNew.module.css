@@ -1,0 +1,172 @@
+.h2 {
+  padding: 40px 0;
+  font-size: 20px;
+}
+
+.작성자비밀번호컨테이너 {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.작성자컨테이너,
+.비밀번호컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.작성자컨테이너 > input,
+.비밀번호컨테이너 > input {
+  width: 620px;
+  height: 48px;
+  border-radius: 8px;
+  color: #000000;
+  border: 1px solid #d4d3d3;
+  padding: 12px 16px;
+}
+
+.작성자컨테이너 > input::placeholder,
+.비밀번호컨테이너 > input::placeholder {
+  color: #ababab;
+}
+.hr {
+  margin: 40px 0px;
+  border: 1px solid #e4e4e4;
+}
+
+.제목컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* -----------재사용할 인풋디자인---------- */
+.제목컨테이너 > input,
+.상세주소컨테이너 > input,
+.유튜브컨테이너 > input {
+  width: 1280px;
+  height: 48px;
+  border-radius: 8px;
+  color: #000000;
+  border: 1px solid #d4d3d3;
+  padding: 12px 16px;
+}
+
+.제목컨테이너 > input::placeholder,
+.상세주소컨테이너 > input::placeholder,
+.유튜브컨테이너 > input::placeholder {
+  color: #ababab;
+}
+
+.내용컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.내용컨테이너 > textarea {
+  width: 1280px;
+  height: 336px;
+  border-radius: 8px;
+  color: #000000;
+  border: 1px solid #d4d3d3;
+  padding: 12px 16px;
+  resize: none;
+}
+
+.내용컨테이너 > textarea::placeholder {
+  color: #ababab;
+}
+.주소컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 40px;
+}
+.우편번호 {
+  display: flex;
+  gap: 8px;
+}
+.우편번호 > input {
+  width: 82px;
+  height: 48px;
+  border-radius: 8px;
+  color: #000000;
+  border: 1px solid #d4d3d3;
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.우편번호 > input::placeholder {
+  color: #ababab;
+}
+.우편번호 > button {
+  width: 130px;
+  height: 48px;
+  border-radius: 8px;
+  color: black;
+  border: 1px solid black;
+  padding: 12px 16px;
+  font-size: 18px;
+  background-color: white;
+  white-space: nowrap;
+}
+.상세주소컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.유튜브컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.사진첨부컨테이너 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.사진첨부 {
+  display: flex;
+  gap: 16px;
+}
+.사진첨부 button {
+  width: 160px;
+  height: 160px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #777777;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.사진첨부 img {
+  padding: 8px;
+}
+.취소등록버튼 {
+  padding: 40px 0px;
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+}
+.취소버튼 {
+  width: 64px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 18px;
+}
+.등록하기버튼 {
+  background-color: #2974e5;
+  width: 95px;
+  height: 48px;
+  border-radius: 8px;
+  color: #e4e4e4;
+  border: none;
+  font-size: 18px;
+}
+.에러메시지 {
+  font-size: 16px;
+  color: #f66a6a;
+  margin-top: 8px;
+}

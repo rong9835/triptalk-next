@@ -1,0 +1,224 @@
+아래의 조건을 모두 적용하여, 아래의 요구사항을 모두 구현할 것.
+구현 결과를 체크리스트로 반환할 것.
+
+==============================================
+
+조건-디자인) Figma 디자인을 기반으로 UI를 구현할 것.
+            - Figma 파일 키: skhuzprg
+            - 노드 ID: 285:32256
+            - Figma 플러그인을 통해 디자인 확인 후 구현
+            
+==============================================
+
+조건-커서룰) 아래의 커서룰을 적용하여 작업하고, 이 작업이 끝나면 해당 rules 적용 결과를 체크리스트로 반환할 것.
+            - @01-common.mdc
+            - @04-func.mdc
+
+==============================================
+
+조건-파일경로) 참고할 TSX  파일경로: src/components/boards-list/list/index.tsx
+조건-파일경로) 참고할 HOOK 파일경로: src/components/boards-list/list/hooks.ts
+조건-파일경로) 구현될 TSX  파일경로: src/components/hot-trip-talk/index.tsx
+조건-파일경로) 구현될 HOOK 파일경로: src/components/hot-trip-talk/hot-trip-talk.hooks.ts
+조건-파일경로) 구현될 QUERIES 파일경로: src/components/hot-trip-talk/hot-trip-talk.queries.ts
+조건-파일경로) 구현될 STYLES 파일경로: src/components/hot-trip-talk/styles.module.css
+조건-파일경로) 구현될 TEST 파일경로: src/components/hot-trip-talk/tests/index.hotTripTalk.hook.spec.ts
+
+==============================================
+
+
+핵심요구사항) 다음의 기능을 playwright 테스트를 활용하여 TDD기반으로 구현하고, 테스트에 통과할 때까지 반복할 것.
+            1) 테스트 제외 라이브러리
+                - jest
+                - @testing-library/react
+
+            2) 테스트 조건
+                - timeout은 설정하지 않거나, 500ms 미만으로 설정할 것.
+                - 모든 페이지의 로드 식별 조건은 아래를 따를 것.
+                    - 페이지 로드 식별 요구사항: 고정식별자 data-testid 대기 방법
+                    - 페이지 로드 식별 금지사항: networkidle 대기 방법
+
+            3) 테스트 로컬스토리지 조건
+                - 실제데이터를 사용할 것.
+                - Mock데이터 사용하지 말 것.
+
+            4) 테스트 데이터타입
+            query fetchBoardsOfTheBest {
+              fetchBoardsOfTheBest {
+                _id
+                writer
+                title
+                contents
+                likeCount
+                createdAt
+                updatedAt
+                deletedAt
+                images
+                boardAddress {
+                  _id
+                  zipcode
+                  address
+                  addressDetail
+                }
+                user {
+                  _id
+                  email
+                  name
+                  picture
+                }
+              }
+            }
+
+            또는
+
+            query fetchBoards(
+              $endDate: DateTime
+              $startDate: DateTime
+              $search: String
+              $page: Int
+            ) {
+              fetchBoards(
+                endDate: $endDate
+                startDate: $startDate
+                search: $search
+                page: $page
+              ) {
+                _id
+                writer
+                title
+                contents
+                likeCount
+                createdAt
+                updatedAt
+                deletedAt
+                images
+                boardAddress {
+                  _id
+                  zipcode
+                  address
+                  addressDetail
+                }
+                user {
+                  _id
+                  email
+                  name
+                  picture
+                }
+              }
+            }
+
+
+            5) 테스트시나리오(모든유저)
+                1. 페이지에 접속하여 컴포넌트 로드 확인
+                2. 하단 유저시나리오에 적절한 테스트시나리오를 생성하여 진행
+
+핵심요구사항) 다음의 조건에 맞게 "오늘 핫한 트립토크" 기능을 step-by-step 으로 구현하고, 적용 결과를 체크리스트로 반환할 것.
+            1) 유저시나리오
+            - 인기 게시글 리스트를 불러올 것
+            - 게시글 카드 형식으로 표시 (이미지, 제목, 작성자, 좋아요 수)
+            - 게시글 클릭 시 상세 페이지로 이동
+            - 최대 표시 개수 제한 (예: 인기글 상위 6개)
+
+==============================================
+
+추가요구사항) 게시글 카드 디자인
+            1) 유저시나리오
+            - 썸네일 이미지 표시 (첫 번째 이미지 사용)
+            - 제목 표시 (말줄임표 처리)
+            - 작성자 정보 표시 (프로필 이미지, 이름)
+            - 좋아요 개수 표시
+            - 작성일 표시 (상대 시간 또는 날짜)
+
+==============================================
+
+추가요구사항) 슬라이더 또는 그리드 레이아웃
+            1) 유저시나리오
+            - Figma 디자인에 따라 슬라이더 또는 그리드 형식으로 표시
+            - 슬라이더인 경우: 좌우 버튼으로 이동
+            - 그리드인 경우: 반응형 그리드 레이아웃 (2-3열)
+            - 모바일 대응 (1열 또는 2열)
+
+==============================================
+
+
+==============================================
+
+구현 가이드라인
+
+1. GraphQL Queries/Mutations 파일 생성
+   - 파일: src/components/hot-trip-talk/hot-trip-talk.queries.ts
+   - fetchBoardsOfTheBest 쿼리 구현 (인기 게시글 전용)
+   - 또는 fetchBoards 쿼리에 정렬 옵션 추가
+   - likeBoard, dislikeBoard 뮤테이션 구현 (선택사항)
+
+2. Hooks 파일 구현
+   - 파일: src/components/hot-trip-talk/hot-trip-talk.hooks.ts
+   - useHotTripTalk 커스텀 훅 구현
+   - 게시글 데이터 로딩
+   - 카드 클릭 이벤트 핸들러
+   - 슬라이더 상태 관리 (슬라이더인 경우)
+   - 좋아요 기능 (선택사항)
+
+3. 스타일 파일 생성
+   - 파일: src/components/hot-trip-talk/styles.module.css
+   - Figma 디자인을 참고하여 스타일 작성
+   - 카드 레이아웃 (이미지, 텍스트 영역)
+   - 그리드 또는 슬라이더 레이아웃
+   - 반응형 디자인
+   - 호버 효과
+
+4. 컴포넌트 구현
+   - 파일: src/components/hot-trip-talk/index.tsx
+   - useHotTripTalk 훅 연결
+   - data-testid 추가 (hot-trip-talk-container, post-card, like-button 등)
+   - 게시글 카드 UI 구현
+   - 이미지 표시 (Next.js Image 컴포넌트 사용)
+   - 로딩 및 에러 처리
+
+5. Playwright 테스트 작성
+   - 파일: src/components/hot-trip-talk/tests/index.hotTripTalk.hook.spec.ts
+   - 컴포넌트 로드 확인
+   - 게시글 리스트 표시 확인
+   - 카드 클릭 시 상세 페이지 이동 확인
+   - 좋아요 기능 테스트 (선택사항)
+
+==============================================
+
+구현 순서 (TDD)
+
+1. Figma 디자인 확인 및 분석
+2. 테스트 작성 → 실패 확인
+3. Queries 파일 생성
+4. Hooks 파일 구현 (최소 기능만)
+5. 스타일 파일 생성 (기본 레이아웃만)
+6. 컴포넌트에 연결
+7. 테스트 실행 → 실패 확인
+8. 기능 구현 → 테스트 통과
+9. 스타일 완성 (Figma 디자인 적용)
+10. 리팩토링
+11. 체크리스트 작성
+
+==============================================
+
+주의사항
+
+1. Figma 디자인을 먼저 확인하고 구현 방향 결정
+   - 슬라이더인지 그리드인지 확인
+   - 카드 레이아웃 확인
+   - 색상, 폰트, 간격 확인
+
+2. 컴포넌트 재사용성 고려
+   - 다른 페이지에서도 사용 가능하도록 독립적으로 구현
+   - props로 개수 제한 조절 가능하게 (예: limit={6})
+
+3. 성능 최적화
+   - 이미지 lazy loading
+   - 필요한 필드만 쿼리
+   - 메모이제이션 (useMemo, useCallback)
+
+4. 접근성
+   - 키보드 네비게이션 지원
+   - alt 텍스트 추가
+   - ARIA 속성 적절히 사용
+
+==============================================

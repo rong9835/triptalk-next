@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GraphQL Schema Test</title>
+</head>
+<body>
+  <h1>GraphQL Schema Introspection</h1>
+  <button onclick="testIntrospection()">스키마 확인</button>
+  <button onclick="testMutation()">Mutation 테스트</button>
+  <pre id="result"></pre>
+
+  <script>
+    const endpoint = 'http://main-practice.codebootcamp.co.kr/graphql';
+    const token = localStorage.getItem('accessToken');
+
+    async function testIntrospection() {
+      const query = `
+        query IntrospectionQuery {
+          __type(name: "Mutation") {
+            name
+            fields {
+              name
+              description
+              args {
+                name
+                type {
+                  name
+                  kind
+                  ofType {
+                    name
+                    kind
+                  }
+                }
+              }
+              type {
+                name
+                kind
+              }
+            }
+          }
+        }
+      `;
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ query })
+        });
+
+        const data = await response.json();
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+
+        // createPointTransaction 관련 mutation 찾기
+        const mutations = data.data.__type.fields;
+        const pointMutations = mutations.filter(m => m.name.toLowerCase().includes('point'));
+        console.log('포인트 관련 Mutations:', pointMutations);
+      } catch (error) {
+        document.getElementById('result').textContent = 'Error: ' + error.message;
+      }
+    }
+
+    async function testMutation() {
+      const mutation = `
+        mutation {
+          createPointTransactionOfLoading(paymentId: "test-payment-id") {
+            _id
+            amount
+            balance
+            createdAt
+          }
+        }
+      `;
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ query: mutation })
+        });
+
+        const data = await response.json();
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('result').textContent = 'Error: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

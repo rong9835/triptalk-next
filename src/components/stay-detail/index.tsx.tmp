@@ -1,0 +1,267 @@
+import Image from "next/image";
+import styles from "./styles.module.css";
+
+'use client';
+
+export default function StayDetail() {
+  return (
+    <div className={styles.container}>
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Header 1280 * 96 */}
+      <header className={styles.header}>
+        <div className={styles.headerTop}>
+          <h1 className={styles.title}>포항 : 숙박권 명이 여기에 들어갑니다</h1>
+          <div className={styles.iconGroup}>
+            <button className={styles.iconButton} aria-label="삭제">
+              <Image
+                src="/icons/close.svg"
+                alt="삭제"
+                width={24}
+                height={24}
+              />
+            </button>
+            <button className={styles.iconButton} aria-label="링크">
+              <Image src="/icons/link.svg" alt="링크" width={24} height={24} />
+            </button>
+            <button className={styles.iconButton} aria-label="위치">
+              <Image
+                src="/icons/location.svg"
+                alt="위치"
+                width={24}
+                height={24}
+              />
+            </button>
+            <button className={styles.bookmarkButton} aria-label="북마크">
+              <Image
+                src="/icons/bookmark.svg"
+                alt="북마크"
+                width={24}
+                height={24}
+              />
+              <span className={styles.bookmarkCount}>24</span>
+            </button>
+          </div>
+        </div>
+        <p className={styles.subtitle}>모던한 분위기의 감도높은 숙소</p>
+        <p className={styles.tags}>
+          #6인 이하 #건식 사우나 #애견동반 가능
+        </p>
+      </header>
+
+      {/* Gap 1280 * 24 */}
+      <div className={styles.gap24}></div>
+
+      {/* Banner 1280 * 480 */}
+      <section className={styles.banner}>
+        {/* Main Image 640 * 480 */}
+        <div className={styles.bannerMainImage}>
+          <Image
+            src="/images/banner1.png"
+            alt="숙소 메인 이미지"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </div>
+
+        {/* Thumbnail Container 180 * 480 */}
+        <div className={styles.bannerThumbnailContainer}>
+          <div className={styles.bannerThumbnail}>
+            <Image
+              src="/images/banner2.png"
+              alt="숙소 썸네일 1"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.bannerThumbnail}>
+            <Image
+              src="/images/banner3.png"
+              alt="숙소 썸네일 2"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.bannerThumbnail}>
+            <Image
+              src="/images/banner1.png"
+              alt="숙소 썸네일 3"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.bannerThumbnail}>
+            <Image
+              src="/images/banner2.png"
+              alt="숙소 썸네일 4"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.bannerGradient}></div>
+        </div>
+
+        {/* Purchase Info Section 412 * 356 */}
+        <div className={styles.purchaseSection}>
+          {/* Price Card */}
+          <div className={styles.priceCard}>
+            <div className={styles.priceInfo}>
+              <div className={styles.priceAmount}>
+                <span className={styles.priceNumber}>32,500</span>
+                <span className={styles.priceUnit}>원</span>
+              </div>
+              <div className={styles.priceDescription}>
+                <p className={styles.descriptionText}>
+                  숙박권은 트립트립에서 포인트 충전 후 구매하실 수 있습니다.
+                </p>
+                <p className={styles.descriptionTextLight}>
+                  상세 설명에 숙박권 사용기한을 꼭 확인해 주세요.
+                </p>
+              </div>
+            </div>
+            <button className={styles.purchaseButton}>구매하기</button>
+          </div>
+
+          {/* Seller Card */}
+          <div className={styles.sellerCard}>
+            <h3 className={styles.sellerTitle}>판매자</h3>
+            <div className={styles.sellerProfile}>
+              <div className={styles.profileImage}>
+                <Image
+                  src="/images/banner1.png"
+                  alt="판매자 프로필"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <span className={styles.sellerName}>김상훈</span>
+              <button className={styles.sellerDropdown} aria-label="판매자 정보">
+                <Image
+                  src="/icons/down_arrow.svg"
+                  alt="더보기"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Divider */}
+      <hr className={styles.divider} />
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Main 844 * 596 */}
+      <main className={styles.main}>
+        <h2 className={styles.mainTitle}>상세 설명</h2>
+        <p className={styles.mainContent}>
+          살어리 살어리랏다 쳥산(靑山)애 살어리랏다 멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
+          살어리랏다 얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러
+          우러라 새여 널라와 시름 한 나도 자고 니러 우니로라 리얄리 얄라셩 얄라리
+          얄라 가던 새 가던 새 본다 믈 아래 가던 새 본다 잉무든 장글란 가지고 믈
+          아래 가던 새 본다 얄리얄리 얄라셩 얄라리 얄라
+          <br />
+          <br />
+          이링공 뎌링공 ᄒᆞ야 나즈란 디내와손뎌
+          <br />
+          오리도 가리도 업슨 바므란 ᄯᅩ 엇디 호리라
+          <br />
+          얄리얄리 얄라셩 얄라리 얄라
+          <br />
+          <br />
+          어듸라 더디던 돌코 누리라 마치던 돌코
+          <br />
+          믜리도 괴리도 업시 마자셔 우니노라
+          <br />
+          얄리얄리 얄라셩 얄라리 얄라
+          <br />
+          <br />
+          살어리 살어리랏다 바ᄅᆞ래 살어리랏다
+          <br />
+          ᄂᆞᄆᆞ자기 구조개랑 먹고 바ᄅᆞ래 살어리랏다
+          <br />
+          얄리얄리 얄라셩 얄라리 얄라
+          <br />
+          <br />
+          가다가 가다가 드로라 에졍지 가다가 드로라
+          <br />
+          사ᄉᆞ미 지ᇝ대예 올아셔 ᄒᆡ금(奚琴)을 혀거를 드로라
+          <br />
+          얄리얄리 얄라셩 얄라리 얄라
+          <br />
+          <br />
+          가다니 ᄇᆡ브른 도긔 설진 강수를 비조라
+          <br />
+          조롱곳 누로기 ᄆᆡ와 잡ᄉᆞ와니 내 엇디 ᄒᆞ리잇고
+          <br />
+          얄리얄리 얄라셩 얄라리 얄라
+        </p>
+      </main>
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Divider */}
+      <hr className={styles.divider} />
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Map 844 * 324 */}
+      <section className={styles.mapSection}>
+        <h2 className={styles.mapTitle}>상세 위치</h2>
+        <div className={styles.mapContainer}>
+          {/* Map will be integrated here */}
+          <div className={styles.mapPlaceholder}></div>
+        </div>
+      </section>
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+
+      {/* Comment 1280 * 316 */}
+      <section className={styles.comment}>
+        {/* Header with icon and title */}
+        <div className={styles.commentHeader}>
+          <Image
+            src="/icons/chat.svg"
+            alt="문의하기"
+            width={24}
+            height={24}
+            className={styles.commentIcon}
+          />
+          <h2 className={styles.commentTitle}>문의하기</h2>
+        </div>
+
+        {/* Comment Input Area */}
+        <div className={styles.commentInputSection}>
+          <div className={styles.commentInputWrapper}>
+            <textarea
+              className={styles.commentInput}
+              placeholder="문의사항을 입력해 주세요."
+              maxLength={100}
+            />
+            <div className={styles.commentCount}>0/100</div>
+          </div>
+          <button className={styles.commentSubmitButton}>문의 하기</button>
+        </div>
+
+        {/* Empty State */}
+        <p className={styles.commentEmptyState}>
+          등록된 문의사항이 없습니다.
+        </p>
+      </section>
+
+      {/* Gap 1280 * 40 */}
+      <div className={styles.gap40}></div>
+    </div>
+  );
+}

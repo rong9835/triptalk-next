@@ -1,0 +1,39 @@
+.navcontainer {
+  min-height: 80px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.navItem {
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  margin-left: 24px;
+  gap: 16px;
+}
+
+.navlogin {
+  display: flex;
+  height: 40px;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

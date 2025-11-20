@@ -1,0 +1,894 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* Gap: 1280 * 40 */
+.gap {
+  width: 1280px;
+  height: 40px;
+}
+
+/* Header: 1280 * 36 */
+.header {
+  width: 1280px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  line-height: 36px;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+
+/* Banner: 1280 * 332 (사용자 정보) */
+.banner {
+  width: 1280px;
+  min-height: 332px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* 배너 제목 */
+.bannerTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* 프로필 섹션 */
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  height: 40px;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.profileName {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.dropdownIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-secondary);
+  margin-left: 4px;
+}
+
+/* 구분선 */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border-primary);
+  margin: 0;
+}
+
+/* 포인트 섹션 */
+.pointSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  height: 24px;
+}
+
+.pointIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.pointValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pointAmount {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-2xl);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.pointUnit {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-2xl);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* 메뉴 탭 섹션 */
+.menuTabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.menuTab {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.menuTab:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.menuTabActive {
+  background-color: var(--color-bg-tertiary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+/* Nav: 1280 * 40 - 탭 네비게이션 */
+.nav {
+  width: 1280px;
+  height: 40px;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.navTab {
+  height: 40px;
+  padding: 0 var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: var(--transition-base);
+  white-space: nowrap;
+}
+
+.navTab:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.navTabActive {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.navTabActive:hover {
+  background-color: var(--color-primary);
+}
+
+/* Gap Small: 1280 * 24 */
+.gapSmall {
+  width: 1280px;
+  height: 24px;
+}
+
+/* Search Bar Container: 1280 * 48 */
+.searchBarContainer {
+  width: 1280px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-lg);
+}
+
+/* Search Bar: 640 * 48 */
+.searchBar {
+  width: 640px;
+  height: 48px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* Search Button: 64 * 48 */
+.searchButton {
+  width: 64px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  line-height: 24px;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.searchButton:hover {
+  opacity: 0.9;
+}
+
+/* Main: 1280 * 712 */
+.main {
+  width: 1280px;
+  height: 712px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 테이블 컨테이너 */
+.tableContainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl) 48px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  box-shadow: var(--shadow-md);
+}
+
+/* 테이블 헤더 */
+.tableHeader {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-2xl);
+}
+
+.headerNumber {
+  width: 64px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.headerProductName {
+  flex: 1;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+
+/* 북마크 테이블용 상품명 컬럼 (너비 조정) */
+.headerProductNameBookmark {
+  width: 740px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+
+.headerPrice {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* 북마크 테이블용 판매자 컬럼 */
+.headerSeller {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.headerDate {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* 테이블 바디 */
+.tableBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 테이블 행 */
+.tableRow {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-2xl);
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--radius-md);
+}
+
+/* 셀 스타일 */
+.cellNumber {
+  width: 64px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+.cellProductName {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* 북마크 테이블용 상품명 셀 */
+.cellProductNameBookmark {
+  width: 740px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.productNameActive {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.productNameInactive {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-disabled);
+}
+
+.statusBadge {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-status-new);
+}
+
+.cellPrice {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* 북마크 테이블용 판매자 셀 */
+.cellSeller {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.cellDate {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+/* 포인트 사용 내역 스타일 */
+/* 탭 컨테이너: 1280 * 40 */
+.pointTabContainer {
+  width: 1280px;
+  height: 40px;
+  display: flex;
+  gap: 16px;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+}
+
+/* 탭 버튼 */
+.pointTab {
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 24px;
+  color: #525252;
+  cursor: pointer;
+  transition: var(--transition-base);
+  white-space: nowrap;
+}
+
+.pointTab:first-child {
+  width: 60px;
+}
+
+.pointTab:not(:first-child) {
+  width: 88px;
+}
+
+.pointTabActive {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* 테이블 컨테이너 */
+.pointTableContainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl) 48px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 테이블 헤더 */
+.pointHistoryHeader {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-xl);
+}
+
+.pointHeaderDate {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.pointHeaderContent {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 전체 탭용 - 거래 및 충전 내역 (중앙 정렬) */
+.pointHeaderAmountAll {
+  width: 812px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 충전내역 탭용 - 결제 ID */
+.pointHeaderPaymentId {
+  width: 812px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+}
+
+/* 충전내역 탭용 - 충전내역 */
+.pointHeaderAmountCharge {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 구매내역/판매내역 탭용 - 상품 명 */
+.pointHeaderProductName {
+  width: 704px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* 판매내역 탭용 - 상품 명 */
+.pointHeaderProductNameSale {
+  width: 704px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* 구매내역 탭용 - 거래내역 */
+.pointHeaderAmountPurchase {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 판매내역 탭용 - 거래내역 */
+.pointHeaderAmountSale {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 판매자/구매자 헤더 */
+.pointHeaderSeller {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.pointHeaderBalance {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* 테이블 바디 */
+.pointTableBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 테이블 행 */
+.pointHistoryRow {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-xl);
+  border: 1px solid #f2f2f2;
+  border-radius: var(--radius-md);
+}
+
+/* 셀 스타일 */
+.pointCellDate {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #919191;
+  text-align: center;
+}
+
+.pointCellType {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  text-align: center;
+}
+
+.pointTypePositive {
+  color: #2974e5;
+}
+
+.pointTypeNegative {
+  color: #f66a6a;
+}
+
+/* 전체 탭용 - 거래 및 충전 내역 셀 */
+.pointCellAmountAll {
+  width: 812px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  text-align: center;
+}
+
+/* 충전내역 탭용 - 결제 ID 셀 */
+.pointCellPaymentId {
+  width: 812px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+}
+
+/* 충전내역 탭용 - 충전내역 셀 */
+.pointCellAmountCharge {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  text-align: center;
+}
+
+/* 구매/판매내역 탭용 - 상품 명 셀 */
+.pointCellProductName {
+  width: 704px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* 판매내역 탭용 - 상품 명 셀 */
+.pointCellProductNameSale {
+  width: 704px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #1c1c1c;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* 구매내역 탭용 - 거래내역 셀 */
+.pointCellAmountPurchase {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  text-align: center;
+}
+
+/* 판매내역 탭용 - 거래내역 셀 */
+.pointCellAmountSale {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  text-align: center;
+}
+
+/* 판매자/구매자 셀 */
+.pointCellSeller {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+.pointAmountPositive {
+  color: #2974e5;
+}
+
+.pointAmountNegative {
+  color: #f66a6a;
+}
+
+.pointCellBalance {
+  width: 100px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+/* 비밀번호 변경 스타일 */
+.passwordChangeContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl);
+}
+
+.passwordChangeTitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.passwordChangeForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.formLabel {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.formInput {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--spacing-md);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  transition: var(--transition-base);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.formInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.passwordSubmitButton {
+  width: 100%;
+  height: 48px;
+  margin-top: var(--spacing-md);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.passwordSubmitButton:hover {
+  opacity: 0.9;
+}

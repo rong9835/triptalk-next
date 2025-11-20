@@ -1,0 +1,187 @@
+/* Container - Full screen layout (1920x1080) */
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left Section - Sign up form area (400x1080) */
+.leftSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+/* Form Container - Main form wrapper (320x480) */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 480px;
+}
+
+/* Title - "회원가입" (320x24) */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 24px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+/* Form Section - Contains subtitle and inputs (320x360) */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 360px;
+}
+
+/* Subtitle - Description text (320x20) */
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 20px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: #333333;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+/* Inputs Wrapper - Container for all input fields (320x324) */
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+  height: 324px;
+}
+
+/* Input Field - Individual input with label (320x72) */
+.inputField {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+/* Label Wrapper - Container for label and asterisk (320x24) */
+.labelWrapper {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+/* Label - Input field label (12px, Regular) */
+.label {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Required Asterisk - Red asterisk (16px, Medium) */
+.required {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #f66a6a;
+  margin: 0;
+}
+
+/* Input - Text input field (320x40) */
+.input {
+  width: 320px;
+  height: 40px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #d4d3d3;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #ababab;
+}
+
+.input:focus {
+  border-color: #2974e5;
+}
+
+/* Error Message - Red error text */
+.errorMessage {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #f66a6a;
+  margin-top: 4px;
+}
+
+/* Signup Button - Submit button (320x48) */
+.signupButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 48px;
+  background-color: #2974e5;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 24px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.signupButton:hover {
+  background-color: #1e5cc4;
+}
+
+.signupButton:active {
+  background-color: #1a4ea3;
+}
+
+/* Right Section - Image background area (1520x1080) */
+.rightSection {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 100%;
+}

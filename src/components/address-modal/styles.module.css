@@ -1,0 +1,26 @@
+/* Figma 디자인에 맞춘 우편번호 검색 버튼 (130 x 48) */
+.searchButton {
+  width: 130px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: #f0f0f0;
+}
+
+.searchButton:active {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,165 @@
+아래의 조건을 모두 적용하여, 아래의 요구사항을 모두 구현할 것.
+구현 결과를 체크리스트로 반환할 것.
+
+==============================================
+
+조건-커서룰) 아래의 커서룰을 적용하여 작업하고, 이 작업이 끝나면 해당 rules 적용 결과를 체크리스트로 반환할 것.
+            - @01-common.mdc
+            - @04-func.mdc
+
+==============================================
+
+조건-파일경로) 참고할 TSX  파일경로: src/components/boards-list/list/index.tsx
+조건-파일경로) 참고할 HOOK 파일경로: src/components/boards-list/list/hooks.ts
+조건-파일경로) 구현될 HOOK 파일경로: src/components/stay-list/index.ts
+조건-파일경로) 구현될 HOOK 파일경로: src/components/stay-list/hooks/index.ts
+조건-파일경로) 구현될 TEST 파일경로: src/components/stay-list/tests/index.stayList.hook.spec.ts
+
+==============================================
+
+
+핵심요구사항) 다음의 기능을 playwright 테스트를 활용하여 TDD기반으로 구현하고, 테스트에 통과할 때까지 반복할 것.
+            1) 테스트 제외 라이브러리
+                - jest
+                - @testing-library/react
+
+            2) 테스트 조건
+                - timeout은 설정하지 않거나, 500ms 미만으로 설정할 것.
+                - 모든 페이지의 로드 식별 조건은 아래를 따를 것.
+                    - 페이지 로드 식별 요구사항: 고정식별자 data-testid 대기 방법
+                    - 페이지 로드 식별 금지사항: networkidle 대기 방법
+
+            3) 테스트 로컬스토리지 조건
+                - 실제데이터를 사용할 것.
+                - Mock데이터 사용하지 말 것.
+
+            4) 테스트 데이터타입
+            query fetchTravelproducts(
+  $isSoldout: Boolean
+  $search: String
+  $page: Int
+) {
+  fetchTravelproducts(
+    isSoldout: $isSoldout
+    search: $search
+    page: $page
+  ) {
+    _id
+    name
+    remarks
+    contents
+    price
+    tags
+    images
+    pickedCount
+    travelproductAddress {
+      _id
+      address
+      addressDetail
+      lat
+      lng
+    }
+    buyer {
+      _id
+      email
+      name
+    }
+    seller {
+      _id
+      email
+      name
+    }
+    soldAt
+    createdAt
+    updatedAt
+    deletedAt
+  }
+}
+
+           
+            5) 테스트시나리오(모든유저)
+                1. /stay에 접속하여 페이지 로드 확인
+                2. 하단 유저시나리오에 적절한 테스트시나리오를 생성하여 진행
+
+핵심요구사항) 다음의 조건에 맞게 일기 페이지네이션 기능을 step-by-step 으로 구현하고, 적용 결과를 체크리스트로 반환할 것.
+            1) 유저시나리오
+            페이지에 접속하면 리스트를 불러올 것
+
+==============================================
+
+추가요구사항) 상단 추천 숙소 슬라이더 기능 구현
+            1) 데이터 타입 (상단 추천 숙소 전용)
+            query fetchTravelproductsOfTheBest {
+              fetchTravelproductsOfTheBest {
+                _id
+                name
+                remarks
+                contents
+                price
+                tags
+                images
+                pickedCount
+                travelproductAddress {
+                  _id
+                  address
+                  addressDetail
+                  lat
+                  lng
+                }
+                buyer {
+                  _id
+                  email
+                  name
+                }
+                seller {
+                  _id
+                  email
+                  name
+                  picture
+                }
+                soldAt
+                createdAt
+                updatedAt
+                deletedAt
+              }
+            }
+
+            2) 유저시나리오
+            - 페이지 접속 시 상단에 추천 숙소 2개 표시
+            - 좌우 버튼 클릭으로 다음/이전 숙소 슬라이드
+            - 마지막 슬라이드에서 다음 클릭 시 첫 번째로 이동 (무한 루프)
+            - 첫 번째 슬라이드에서 이전 클릭 시 마지막으로 이동 (무한 루프)
+
+==============================================
+
+구현 완료 내역 (2025-11-19)
+
+1. GraphQL Queries 파일 생성
+   - 파일: src/components/stay-list/hooks/queries.ts
+   - fetchTravelproducts 쿼리 구현 완료
+   - fetchTravelproductsOfTheBest 쿼리 추가 필요 ⬅️ 다음 작업
+
+2. Hooks 파일 구현
+   - 파일: src/components/stay-list/hooks/index.ts
+   - useStayList 커스텀 훅 구현
+   - useState로 슬라이더 상태 관리
+   - handlePrevSlide, handleNextSlide 함수 구현
+   - featuredProducts를 2개씩 슬라이스
+
+3. 컴포넌트 수정
+   - 파일: src/components/stay-list/index.tsx
+   - useStayList 훅 연결
+   - data-testid 추가 (stay-list-container, stay-card)
+   - 좌우 슬라이더 버튼 추가 및 이벤트 연결
+
+4. Playwright 테스트 작성
+   - 파일: tests/index.stayList.hook.spec.ts
+   - 5개 테스트 시나리오 구현 및 통과
+   - 페이지 로드 확인
+   - 숙소 리스트 불러오기 확인
+   - 슬라이더 버튼 동작 테스트
+
+5. 테스트 결과
+   - ✅ 5 passed (6.5s)
+   - 실제 데이터 사용 (Mock 미사용)
+   - data-testid로 페이지 식별

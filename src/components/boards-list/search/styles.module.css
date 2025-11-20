@@ -1,0 +1,157 @@
+/* 검색 컴포넌트 스타일 */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* 페이지 제목 */
+.pageTitle {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: #000000;
+  margin: 0;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+/* 좌측 검색 영역 (datepicker + search bar + 검색 버튼) */
+.searchArea {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 1110px;
+}
+
+/* DatePicker 래퍼 */
+.datePickerWrapper {
+  width: 289px;
+  height: 48px;
+}
+
+.datePickerWrapper :global(.ant-picker) {
+  width: 100%;
+  height: 48px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.datePickerWrapper :global(.ant-picker-input > input) {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+  text-align: center;
+}
+
+.datePickerWrapper :global(.ant-picker-input > input::placeholder) {
+  color: #777777;
+}
+
+.datePickerWrapper :global(.ant-picker-separator) {
+  color: #777777;
+}
+
+/* 검색 입력 필드 */
+.searchInput {
+  width: 640px;
+  height: 48px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 12px 12px 44px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1c1c1c;
+}
+
+.searchInput::placeholder {
+  color: #919191;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: #e8e8e8;
+}
+
+/* 검색 아이콘 컨테이너 */
+.searchInputWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.searchInputWrapper::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z' stroke='%23777777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* 검색 버튼 */
+.searchButton {
+  width: 64px;
+  height: 48px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+  background-color: #333333;
+}
+
+.searchButton:active {
+  background-color: #1a1a1a;
+}
+
+/* 트립토크 등록 버튼 */
+.registerButton {
+  width: 162px;
+  height: 48px;
+  background-color: #2974e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.registerButton:hover {
+  background-color: #1f5db8;
+}
+
+.registerButton:active {
+  background-color: #1a4d99;
+}
