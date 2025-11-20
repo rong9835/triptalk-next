@@ -58,6 +58,15 @@ export default function useBoardsList() {
    */
   const onClickTitle = (boardId: string) => {
     console.log('🔍 클릭한 게시글 ID:', boardId);
+
+    // 로그인 체크
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+      alert('로그인이 필요합니다.');
+      router.push('/login');
+      return;
+    }
+
     router.push(`/boards/detail/${boardId}`);
     // 예: /boards/detail/123 으로 이동
   };

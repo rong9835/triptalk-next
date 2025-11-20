@@ -8,10 +8,9 @@ import { FETCH_BOARDS } from '@/components/boards-list/list/queries'; // GraphQL
 import { FETCH_BOARDS_COUNT } from './queries'; // 게시글 개수 쿼리
 import Search from '@/components/boards-list/search'; // 검색 컴포넌트
 import { useState } from 'react'; // React 상태 관리 훅
-import { withAuth } from '@/commons/hocs/auth';
 
 //  메인 페이지 컴포넌트 구조
-export default withAuth(function BoardsPage() {
+export default function BoardsPage() {
   //  useState 훅 사용법 (중요!)
   // 검색어를 저장하는 상태 - 초기값은 빈 문자열
   const [keyword, setKeyword] = useState('');
@@ -82,4 +81,4 @@ export default withAuth(function BoardsPage() {
       />
     </>
   );
-});
+}
