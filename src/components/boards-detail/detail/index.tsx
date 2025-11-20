@@ -45,7 +45,6 @@ const getYouTubeEmbedUrl = (url: string): string => {
 export default function BoardsDetail() {
   const {
     data, // hooks에서 데이터 가져오기
-    boardId, // 게시글 ID
     isLiked, // 좋아요 활성화 상태
     isDisliked, // 싫어요 활성화 상태
     likeCount, // 좋아요 개수

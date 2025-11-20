@@ -96,7 +96,7 @@ export default function StayWrite() {
         existingStyle.remove();
       }
     };
-  }, [styles.editor]);
+  }, []);
 
   return (
     <>

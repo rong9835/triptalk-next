@@ -156,7 +156,7 @@ export default function useStayForm() {
 
   const [contentsValue, setContentsValueState] = useState('');
 
-  const { register, handleSubmit, formState, setValue, resetField, watch } =
+  const { register, handleSubmit, formState, setValue } =
     useForm<StayFormValues>({
       resolver: zodResolver(staySchema),
       mode: 'onChange',
