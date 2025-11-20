@@ -70,7 +70,7 @@ export default function BoardsLogin() {
   };
 
   const onClickSignUP = () => {
-    router.push('/boards/signup');
+    router.push('/signup');
   };
 
   return (

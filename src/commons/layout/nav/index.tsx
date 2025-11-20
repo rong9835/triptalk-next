@@ -28,7 +28,7 @@ export default function Nav() {
   });
 
   const onClickLogin = () => {
-    router.push('/boards/login');
+    router.push('/login');
   };
 
   const onClickMyPage = () => {

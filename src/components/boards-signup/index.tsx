@@ -80,7 +80,7 @@ export default function BoardsSignUp() {
         },
       });
       alert('회원가입성공');
-      router.push('/boards/login');
+      router.push('/login');
     } catch {
       alert('회원가입실패');
     }

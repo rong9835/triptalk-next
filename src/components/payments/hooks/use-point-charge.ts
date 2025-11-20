@@ -24,7 +24,7 @@ export const usePointCharge = (onChargeComplete?: () => void) => {
 
       if (!accessToken) {
         alert('로그인이 필요한 서비스입니다.');
-        window.location.href = '/boards/login';
+        window.location.href = '/login';
         return;
       }
     }
@@ -125,7 +125,7 @@ export const usePointCharge = (onChargeComplete?: () => void) => {
           console.error('❌ 401 에러 - 인증 실패');
           alert('로그인 세션이 만료되었습니다. 다시 로그인해 주세요.');
           localStorage.removeItem('accessToken');
-          window.location.href = '/boards/login';
+          window.location.href = '/login';
         } else if (errorMessage.includes('404') || errorMessage.includes('not found')) {
           console.error('❌ 404 에러 - 결제 정보를 찾을 수 없음');
           alert(

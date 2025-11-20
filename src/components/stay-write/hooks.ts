@@ -516,7 +516,7 @@ export default function useStayForm() {
 
           if (hasAuthError) {
             alert('로그인이 필요합니다');
-            router.push('/boards/login');
+            router.push('/login');
             return;
           }
 

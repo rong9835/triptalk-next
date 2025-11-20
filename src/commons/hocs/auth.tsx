@@ -7,7 +7,7 @@ export const withAuth = <T extends object>(Component: ComponentType<T>) => {
     useEffect(() => {
       if (!localStorage.getItem('accessToken')) {
         alert('로그인 후 이용 가능합니다!!!');
-        router.push('/boards/login');
+        router.push('/login');
       }
     }, [router]);
     return <Component {...props} />;

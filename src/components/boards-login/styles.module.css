@@ -67,7 +67,6 @@
 /* 폼 영역 - Frame 427323362 (320x128) */
 .formSection {
   width: 320px;
-  height: 128px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -88,7 +87,6 @@
 
 .inputGroup {
   width: 320px;
-  height: 92px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -97,10 +95,10 @@
 /* 인풋 래퍼 */
 .inputWrapper {
   width: 320px;
-  height: 40px;
+  min-height: 40px;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 4px;
   position: relative;
 }
 
@@ -141,14 +139,12 @@
 
 /* 에러 라벨 */
 .errorLabel {
-  position: absolute;
-  bottom: -24px;
-  left: 0;
   font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   color: #f66a6a;
+  margin-top: 4px;
 }
 
 /* 버튼 영역 - Frame 427323364 (320x92) */

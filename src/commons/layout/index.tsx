@@ -10,7 +10,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
 
   // 헤더와 배너를 완전히 숨길 페이지
   const hideLayout =
-    pathname === '/boards/login' || pathname === '/boards/signup';
+    pathname === '/login' || pathname === '/signup';
 
   // 헤더는 보이지만 배너만 숨길 페이지
   const hideBanner =

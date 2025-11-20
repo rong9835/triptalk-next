@@ -45,7 +45,7 @@ export default function ApiHeaderProvider(props: ApiHeaderProviderProps) {
             localStorage.removeItem('accessToken');
             setAccessToken('');
             // 로그인 페이지로 리다이렉트
-            window.location.href = '/boards/login';
+            window.location.href = '/login';
             alert('로그인이 필요합니다.');
           }
         }
@@ -63,7 +63,7 @@ export default function ApiHeaderProvider(props: ApiHeaderProviderProps) {
         if (typeof window !== 'undefined') {
           localStorage.removeItem('accessToken');
           setAccessToken('');
-          window.location.href = '/boards/login';
+          window.location.href = '/login';
           alert('로그인이 필요합니다.');
         }
       }
